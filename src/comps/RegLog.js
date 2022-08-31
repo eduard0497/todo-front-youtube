@@ -7,6 +7,7 @@ function RegLog({ setUserLoggedIn }) {
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  console.log(baseURL);
 
   useEffect(() => {
     let loggedInUserID = localStorage.getItem("userid");

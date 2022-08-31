@@ -20,6 +20,10 @@ function RegLog({ setUserLoggedIn }) {
   }, []);
 
   const registerUser = async () => {
+    if (!username || !password) {
+      setMessage("Please fill out the form properly...");
+      return;
+    }
     setLoading(true);
     await fetch(`${baseURL}/register`, {
       method: "post",
@@ -73,7 +77,7 @@ function RegLog({ setUserLoggedIn }) {
         onChange={(e) => setUsername(e.target.value)}
       />
       <input
-        type="text"
+        type="password"
         placeholder="Password..."
         value={password}
         onChange={(e) => setPassword(e.target.value)}
